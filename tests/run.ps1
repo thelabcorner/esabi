@@ -98,7 +98,19 @@ function Invoke-MSVCX86ExportCheck([string[]]$Expected) {
     }
 }
 
-$expectedExports = @("ESFreeMem", "ESGetVersion", "ESInitialize", "ESTerminate", "ping")
+$expectedExports = @(
+    "ESFreeMem",
+    "ESGetVersion",
+    "ESInitialize",
+    "ESTerminate",
+    "ping",
+    "add_one",
+    "invert_bool",
+    "half_value",
+    "text_value",
+    "script_value",
+    "init_argc"
+)
 
 try {
     Invoke-Checked $Clang @("-std=c11", "-Wall", "-Wextra", "-Werror", (Join-Path $PSScriptRoot "layout_smoke.c"), "-o", (Join-Path $build "layout_long32.exe"))
