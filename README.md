@@ -212,6 +212,7 @@ The documented ExternalObject type tags and runtime statuses are exposed under t
 | Hostile x86 default convention | `tests/run.ps1` | direct method remains cdecl |
 | Clang PE exports | `tests/run.ps1` | exact x86 + x64 entry-point names |
 | Microsoft x86 exports | `tests/run.ps1` | `cl.exe` + `link.exe` + `dumpbin` pass when Build Tools are installed |
+| Installed CMake package | CI + `tests/cmake-consumer` | C99 and C++11 consumers resolve `find_package`, compile, and run |
 | Illustrator Windows x64 ABI behavior | prior live ExternalObject probes | LONG32 layout/tag behavior corroborated |
 
 The permanent command is:
@@ -299,6 +300,8 @@ Verify the installable CMake package:
 ```powershell
 cmake -S . -B build -DCMAKE_INSTALL_PREFIX=install
 cmake --install build
+cmake -S tests/cmake-consumer -B consumer-build -DCMAKE_PREFIX_PATH=install
+cmake --build consumer-build --config Release
 ```
 
 The test runner uses a unique build directory per invocation so a DLL currently loaded by an Adobe host cannot block a later validation run.
@@ -316,6 +319,7 @@ esabi/
 ├── tests/
 │   ├── compile_smoke.c
 │   ├── cpp_smoke.cpp
+│   ├── cmake-consumer/
 │   ├── export_smoke.c
 │   ├── layout_smoke.c
 │   └── run.ps1

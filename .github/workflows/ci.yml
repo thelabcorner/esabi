@@ -22,3 +22,15 @@ jobs:
 
       - name: Install CMake package
         run: cmake --install build
+
+      - name: Configure installed-package consumer
+        run: cmake -S tests/cmake-consumer -B consumer-build -DCMAKE_PREFIX_PATH="${{ github.workspace }}/install"
+
+      - name: Build installed-package consumer
+        run: cmake --build consumer-build --config Release
+
+      - name: Run installed-package consumers
+        shell: pwsh
+        run: |
+          ./consumer-build/Release/esabi_c_consumer.exe
+          ./consumer-build/Release/esabi_cpp_consumer.exe

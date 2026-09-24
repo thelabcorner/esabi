@@ -13,6 +13,7 @@ Evidence recorded: **2026-09-23**.
 | C11 | LONG32 / LONG64 | Clang C11 | passes | compile + executable layout/helper smoke |
 | MSVC frontend compatibility | LONG32 | clang-cl C11, `/W4 /WX` | passes | compile |
 | C++ compatibility | LONG32 | Clang C++11 | passes | compile + executable smoke |
+| Installed CMake package | LONG32 | Visual Studio 2022 consumer project | C99 + C++11 consumers resolve package, compile, and run | install + `find_package` consumer smoke |
 | LONG64 structural profile | LONG64 | Clang C11 on 64-bit target | 24-byte value; type@8; reserved@16; 32-bit semantic range checks pass | compile + executable smoke |
 | Illustrator 2026 Windows x64 direct ABI | LONG32 | Illustrator 2026 | esabi-only DLL loaded; `ping() = 42`; `ExternalObject.version = 1` | direct host runtime |
 | Modern Adobe host on macOS LP64 | LONG64 | — | **not yet runtime verified** | explicit unknown |

@@ -9,4 +9,5 @@ All notable changes to esabi are documented here.
 - Added exact host entry-point and direct-method declaration macros with explicit Windows cdecl behavior.
 - Added zero-allocation typed value and argument helpers.
 - Added C99, C11, C++11, clang-cl, x86/x64 PE export, hostile calling-convention, and native MSVC x86 validation.
+- Added an installable header-only CMake package with C99 and C++11 installed-package consumer tests.
 - Added ABI, compatibility, and provenance documentation.
