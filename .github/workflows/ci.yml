@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate ABI and exports
+        shell: pwsh
+        run: ./tests/run.ps1
+
+      - name: Configure CMake package
+        run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX="${{ github.workspace }}/install"
+
+      - name: Install CMake package
+        run: cmake --install build

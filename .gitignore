@@ -1,0 +1,10 @@
+tests/.build/
+build/
+cmake-build-*/
+install/
+*.exe
+*.obj
+*.lib
+*.dll
+*.exp
+*.pdb
