@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(esabi VERSION 0.3.0 LANGUAGES NONE)
+project(esabi VERSION 0.3.1 LANGUAGES NONE)
 
 include(CMakePackageConfigHelpers)
 

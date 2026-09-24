@@ -111,7 +111,7 @@ Adobe's public ExternalObject C interface is historically expressed with native 
 
 ESABI keeps the interoperability facts while providing an independently written, MIT-licensed declaration with explicit profiles, compile-time invariants, checked helpers, and reproducible binary tests.
 
-Current version: **0.3.0**.
+Current version: **0.3.1**.
 
 ---
 
@@ -142,7 +142,7 @@ include(FetchContent)
 FetchContent_Declare(
     esabi
     GIT_REPOSITORY https://github.com/thelabcorner/esabi.git
-    GIT_TAG v0.3.0
+    GIT_TAG v0.3.1
 )
 
 FetchContent_MakeAvailable(esabi)

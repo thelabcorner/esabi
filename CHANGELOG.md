@@ -2,6 +2,11 @@
 
 All notable changes to esabi are documented here.
 
+## 0.3.1 - 2026-09-23
+
+- Expanded the ExternalObject export smoke test to cover every documented direct-method shape and standard entry point, with exact export assertions on x86 and x64.
+- Documented ESRAND in the shared toolkit listing.
+
 ## 0.3.0 - 2026-09-23
 
 - Introduced explicit LONG32 and LONG64 ABI profiles instead of relying on platform-dependent C `long` width implicitly.
