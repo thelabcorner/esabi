@@ -14,7 +14,64 @@
 
 </div>
 
-> **From the same team: [ESON](https://github.com/thelabcorner/eson) — strict JSON, [ESB64](https://github.com/thelabcorner/es-b64) — Base64/UTF-8, [ESARR](https://github.com/thelabcorner/es-arr) — modern array methods, [ESSTR](https://github.com/thelabcorner/es-str) — string whitespace methods, [ESCHARS](https://github.com/thelabcorner/es-chars) — native bulk byte/string operations, [ESPACK](https://github.com/thelabcorner/espack) — self-extracting ExternalObject bundles, [ESHTTP](https://github.com/thelabcorner/es-http) — HTTP for ExtendScript, [ESMIN](https://github.com/thelabcorner/es-min) — ExtendScript-aware minification, [ESTIMER](https://github.com/thelabcorner/es-timer) — timing/profiling, [VectorIPC](https://github.com/thelabcorner/vector-ipc) — bounded local IPC, and [ArcFit.dev](https://arcfit.dev) — deterministic arc warp for Illustrator.**
+---
+
+## Part Of The Same Toolkit
+
+> Production-grade ExtendScript infrastructure for Illustrator-era JavaScript engines.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Runtime Primitives
+
+**[ESON](https://github.com/thelabcorner/eson)**<br>
+Strict RFC 8259 JSON for ExtendScript.
+
+**[ESB64](https://github.com/thelabcorner/es-b64)**<br>
+Base64 and UTF-8 utilities.
+
+**[ESARR](https://github.com/thelabcorner/es-arr)**<br>
+ES5+ Array compatibility methods.
+
+**[ESSTR](https://github.com/thelabcorner/es-str)**<br>
+String whitespace and trim methods.
+
+**[ESCHARS](https://github.com/thelabcorner/es-chars)**<br>
+Native bulk byte operations.
+
+**[ESHTTP](https://github.com/thelabcorner/es-http)**<br>
+HTTP transport for ExtendScript automation.
+
+**[ESTIMER](https://github.com/thelabcorner/es-timer)**<br>
+Microsecond timing for ExtendScript automation.
+
+</td>
+<td width="50%" valign="top">
+
+### Build & Integration Tools
+
+**[ESPACK](https://github.com/thelabcorner/espack)**<br>
+Self-extracting ExternalObject bundles.
+
+**[ESMIN](https://github.com/thelabcorner/es-min)**<br>
+Minification for shipped JSX bundles.
+
+**[ESABI](https://github.com/thelabcorner/esabi)**<br>
+Modern ExternalObject ABI declarations for native integrations.
+
+**[VectorIPC](https://github.com/thelabcorner/vector-ipc)**<br>
+Bounded local IPC for scripting hosts and native plug-ins.
+
+**ESOBF** <sub>coming soon</sub><br>
+Obfuscation for hardened JSX distribution.
+
+</td>
+</tr>
+</table>
+
+Also from the same team: **[ArcFit.dev](https://arcfit.dev)**, deterministic arc warp for Illustrator.
 
 ---
 
@@ -147,6 +204,10 @@ ESABI_DIRECT_FUNCTION(add_one)
 
     if (argc != 1 || !esabi_arg_get_i32(argv, argc, 0, &input)) {
         return ESABI_ERR_BAD_ARGUMENTS;
+    }
+
+    if (input == INT32_MAX) {
+        return ESABI_ERR_RANGE;
     }
 
     esabi_value_set_i32(retval, input + 1);

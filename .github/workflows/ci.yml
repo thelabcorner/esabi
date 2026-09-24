@@ -32,5 +32,7 @@ jobs:
       - name: Run installed-package consumers
         shell: pwsh
         run: |
-          ./consumer-build/Release/esabi_c_consumer.exe
-          ./consumer-build/Release/esabi_cpp_consumer.exe
+          & ./consumer-build/Release/esabi_c_consumer.exe
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & ./consumer-build/Release/esabi_cpp_consumer.exe
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
