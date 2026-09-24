@@ -47,6 +47,9 @@ HTTP transport for ExtendScript automation.
 **[ESTIMER](https://github.com/thelabcorner/es-timer)**<br>
 Microsecond timing for ExtendScript automation.
 
+**[ESRAND](https://github.com/thelabcorner/es-rand)**<br>
+Deterministic random streams and sampling for ExtendScript.
+
 </td>
 <td width="50%" valign="top">
 
